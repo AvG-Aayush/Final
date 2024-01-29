@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@1,100;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    margin: 0;padding: 20px;
+    min-height: 100vh;
+    background-image: url(1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: linear-gradient(to top, white 0%, rgba(255,255,255,0) 100%);
+        font-family:'Genos', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.button a{
+    color: #000000;
+    font-size:30px;
+}
+.catt p{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: red;
+    color: #eee;
+  }
+.flip{
+    margin: 20px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: crosshair;
+    top: 40px;
+    
+}
+.card,
+.card1{
+    width: 380px;
+    min-height: 600px;
+    height: auto;
+    background-color: #000000;
+    background-image: url(3.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.flip:nth-child(2) .card,
+.flip:nth-child(2) .card1{
+    background-image: url(12.jpg);
+}
+.flip:nth-child(3) .card,
+.flip:nth-child(3) .card1{
+    background-image: url(4.jpg);
+}
+.card{
+    transform: rotateY(0deg);
+}
+.card1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+}
+.card::after,
+.card1::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #0a0a0a;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+}
+.card .inner,
+.card1 .inner{
+    width: 100%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    z-index: 2;
+}
+.inner .icon{
+    width: 400px;
+    margin-bottom: 150px;
+    left: -60px;
+    position: relative;
+}
+
+.inner h3{
+    margin-bottom: 10px;
+    color: antiquewhite;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+}
+.inner p{
+    color: #ffffff;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    font-size: 20p x;
+    line-height: 35px;
+}
+.flip:hover .card{
+    transform: rotateY(-180deg);
+}
+.flip:hover .card1{
+    transform: rotateY(0deg);
+}
+.button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    /* float: left; */
+    margin: 0px 50px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor:pointer;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+    margin-left: 30px;
+    position: relative;
+
+   }
+   .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    justify-content: center;
+    align-items: center;
+    left: -1px;
+    top: 10px;
+    position: relative;
+   
+   }
+   .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+   }
+   .button span{
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 10px;
+    margin-left: 0px;
+   }
+   .button:hover{
+    width: 200px;
+    margin-left: 20px;
+   }
+   @media(min-width: 1380px)
+   {
+.flip{
+    width: 250px;
+    gap: 50px;
+    left: -200px;
+   gap: 20px;
+}
+.flip:nth-child(2){
+    left: -80px;
+    line-height: 20px;
+}
+.flip:nth-child(3){
+    left: 40px;
+    line-height: 0px;
+}
+   }
+   @media(428px >= width){
+    body{
+        overflow-y: scroll;
+        
+    }
+   }
+   header{
+    width: 100%;
+    height: 75px;
+       position: absolute;
+    box-shadow: 0 5px 15px #e5e5e5;
+    background-color:rgba(0,0,0,0.1);
+    backdrop-filter: brightness(50%);
+    top: 0px;
+    }
+    
+    .logo{
+      
+    overflow: hidden;
+    position: absolute;
+    padding: 0 20px;
+    z-index: 100;
+    
+      
+    }
+    
+    .logo img{
+        border-radius: 50px;;
+        width: 55px;
+        margin-top: 5px;
+        float: left;
+        cursor:pointer;
+        text-align: center;
+        transition: 0.5s ease;
+    }
+    .logo img:hover{
+    transform: scale(1.5);
+    }
+    header .menu {
+    
+            display: flex;
+            position: absolute;
+        gap: 100px;
+    padding: 10px 850px;
+    
+     margin-left: 850px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-left: 20px;
+        color: aliceblue;
+        overflow-x: hidden;
+    
+    }
+    .menu a{
+        color: #eee;
+        text-decoration: 1px dotted black;
+        transition: 0.3s ease;
+        font-size: 20px;
+        justify-content: center;
+        align-items: center;
+     
+    }
+    header .menu a:hover{
+        transform: scale(1.2);
+        text-decoration: underline solid 2px white;
+    }
+    header .menu .active{
+        text-decoration:overline solid 2px white;
+        color: #7c98b3;
+    }
+    @media(800px <= width){
+      
+        header .menu {
+            margin-left: -100px;
+        }
+      }
+      @media(800px < height){
+        header{
+            top: 0px;
+    
+        }
+        header .menu{
+            justify-content: center;
+            left: -630px;
+            gap: 150px;
+        }
+    }
+    @media(428px >= width){
+      
+        header .menu{
+            top: 0px;
+            /* justify-content: center; */
+            left: -780px;
+            gap: 45px;
+        }
+    }
